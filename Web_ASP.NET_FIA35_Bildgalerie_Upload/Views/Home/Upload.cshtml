@@ -1,0 +1,26 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Web_ASP.NET_FIA35_Bildgalerie_Upload.Models.Bildcs
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Upload</title>
+</head>
+<body style="width:80%;margin:auto;background-color:cornflowerblue;padding:1em;border-radius:10px">
+    <h1>Upload</h1>
+    <br />    
+    <form asp-action="Upload" method="post" enctype="multipart/form-data">
+        <input type="file" asp-for="@Model.file" />
+        <br />
+        <button>Speichern</button>
+    </form>
+    <a href="/home/index">Zurück</a>
+</body>
+</html>

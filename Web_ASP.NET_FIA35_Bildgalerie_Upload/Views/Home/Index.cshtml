@@ -1,0 +1,35 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Web_ASP.NET_FIA35_Bildgalerie_Upload.Models.BilderListe
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="/CSS/style.css" rel="stylesheet" />
+</head>
+<body style="width:80%;margin:auto;background-color:cornflowerblue;padding:1em;border-radius:10px">
+    <h1>Galerie</h1>
+    <br />
+    <a href="/home/upload" style="float:right">Upload</a>
+    <br />
+    <br />
+    <form asp-action="Index">
+        <fieldset class="background-color-primary-3">
+            <legende style="font-size:x-large">Bilderschau</legende><br />
+            <div class="Container">
+                @foreach (var bild in Model.listDateiInfos)
+                {
+                    <img src="/Bilder/@bild.Name" title="Name:&nbsp @bild.Name&#10;Größe:&nbsp @bild.Length" alt="@bild.Name" width="222" height="222" />
+                }
+            </div>
+
+        </fieldset>
+    </form>
+</body>
+</html>
